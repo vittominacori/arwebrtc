@@ -1,0 +1,52 @@
+@import "/bower_components/icono/less/icono.less";
+
+body {
+  margin: 0;
+  background: #F0F0F0;
+}
+
+.preview {
+  display: none;
+}
+
+canvas, img {
+  display: block;
+  margin: auto;
+  width: auto;
+  height: 60vh;
+  margin-top:5vh;
+  border: 5vh solid #FFF;
+  border-bottom-width: 10vh;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+.buttons {
+  text-align: center;
+  margin-top: 4vh;
+  height: 5vh;
+
+  button {
+    cursor: pointer;
+    color: #fff;
+    background: #517fa4;
+    font-size: 1em;
+    padding: 1vh;
+    border: none;
+
+    &.fb {
+      background: #3b5998;
+    }
+
+    &.tw {
+      background: #00aced;
+    }
+
+    &.gp {
+      background: #dd4b39;
+    }
+
+    i {
+      color: #fff;
+    }
+  }
+}
