@@ -13,18 +13,18 @@ module.exports = function(grunt) {
             plugins: {
                 src: [
                     'bower_components/angular/angular.min.js',
-                    'web/js/vendor/ccv.js',
-                    'web/js/vendor/face.js'
+                    'app/js/vendor/ccv.js',
+                    'app/js/vendor/face.js'
                 ],
-                dest: 'web/js/plugins.js'
+                dest: 'app/js/plugins.js'
             },
             // FRONTEND
             angular: {
                 src: [
-                    'web/js/app.js',
-                    'web/js/controllers.js'
+                    'app/js/app.js',
+                    'app/js/controllers.js'
                 ],
-                dest: 'web/js/script.js'
+                dest: 'app/js/script.js'
             }
         },
 
@@ -34,8 +34,8 @@ module.exports = function(grunt) {
 
             // ALL
             all: [
-                'web/js/app.js',
-                'web/js/controllers.js'
+                'app/js/app.js',
+                'app/js/controllers.js'
             ]
         },
 
@@ -49,7 +49,7 @@ module.exports = function(grunt) {
             },
             js: {
                 files: {
-                    'web/js/app.min.js': 'web/js/app.js'
+                    'app/js/app.min.js': 'app/js/app.js'
                 }
             }
         },
@@ -62,7 +62,7 @@ module.exports = function(grunt) {
                     cleancss: true
                 },
                 files: {
-                    "web/css/style.css": "web/less/style.less"
+                    "app/css/style.css": "app/less/style.less"
                 }
             }
         },
@@ -71,14 +71,14 @@ module.exports = function(grunt) {
         // ------
         watch: {
             css: {
-                files: ['web/less/*.less'],
+                files: ['app/less/*.less'],
                 tasks: ['less:production'],
                 options: {
                     livereload: true
                 }
             },
             js: {
-                files: ['web/js/app.js', 'web/js/controllers.js'],
+                files: ['app/js/app.js', 'app/js/controllers.js'],
                 tasks: ['jshint:all','concat:angular'],
                 options: {
                     livereload: true
