@@ -94,7 +94,7 @@ ARWebRTC.controller('CanvasCtrl', ['$scope', '$interval', '$http',
                 $scope.takePicture('https://www.facebook.com/sharer/sharer.php?u=');
             },
             tweet: function(){
-                $scope.takePicture('https://twitter.com/intent/tweet?text=demo&amp;url=');
+                $scope.takePicture('https://twitter.com/intent/tweet?text=Sample of using Augmented Reality with your browser&amp;url=');
             },
             gplus: function(){
                 $scope.takePicture('https://plus.google.com/share?url=');
