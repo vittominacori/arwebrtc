@@ -2,9 +2,10 @@
 	<img src="<?=$photo?>">
 	<div class="buttons">
 		<button ng-click="init()"><i class="icono-play"></i> Take your own</button>
-		<button class="fb" ng-click="share.fb()"><i class="icono-facebook"></i> Share</button>
-		<button class="tw" ng-click="share.tweet()"><i class="icono-twitter"></i> Tweet</button>
-		<button class="gp" ng-click="share.gplus()"><i class="icono-gplus"></i> +1</button>
+		<button class="fb" ng-click="share.fb()"><i class="icono-facebook"></i></button>
+		<button class="tw" ng-click="share.tweet()"><i class="icono-twitter"></i></button>
+		<button class="gp" ng-click="share.gplus()"><i class="icono-gplus"></i></button>
+		<button class="in" ng-click="share.in()"><i class="icono-linkedIn"></i></button>
 	</div>
 </div>
 

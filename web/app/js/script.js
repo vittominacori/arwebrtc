@@ -823,6 +823,9 @@ ARWebRTC.controller('CanvasCtrl', ['$scope', '$interval', '$http',
             },
             gplus: function(){
                 window.open('https://plus.google.com/share?url=' + document.location.href);
+            },
+            in: function(){
+                window.open('https://www.linkedin.com/shareArticle?mini=true&title=Try Augmented Reality in your browser&summary=Take and share your own photo using Augmented Reality in your browser with WebRTC and JavaScript.&url=' + document.location.href);
             }
         };
 
