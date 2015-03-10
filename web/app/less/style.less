@@ -2,7 +2,7 @@
 
 body {
   margin: 0;
-  background: #F0F0F0;
+  background: #333;
 }
 
 .preview {
@@ -33,20 +33,38 @@ canvas, img {
     padding: 1vh;
     border: none;
 
+    &:hover {
+        background: multiply(#1abc9c,#cccccc);
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.19);
+        top: -4px;
+    }
+
     &.fb {
       background: #3b5998;
+      &:hover {
+        background: multiply(#3b5998,#cccccc);
+      }
     }
 
     &.tw {
       background: #00aced;
+      &:hover {
+        background: multiply(#00aced,#cccccc);
+      }
     }
 
     &.gp {
       background: #dd4b39;
+      &:hover {
+        background: multiply(#dd4b39,#cccccc);
+      }
     }
 
     &.in {
       background: #517fa4;
+      &:hover {
+        background: multiply(#517fa4,#cccccc);
+      }
     }
 
     i {
@@ -58,11 +76,11 @@ canvas, img {
 .footer {
   height: 2vh;
   padding: 3vh;
-  color: #cccccc;
+  color: #999;
   text-align: right;
 
   a {
-    color: #00aced;
+    color: #ccc;
     text-decoration: none;
   }
 }
