@@ -1,7 +1,7 @@
 <div ng-show="!recording">
-<img src="<?=$photo?>">
+	<img src="<?=$photo?>">
 	<div class="buttons">
-		<button ng-click="init()"><i class="icono-image"></i> Take yours</button>
+		<button ng-click="init()"><i class="icono-image"></i> Take your own</button>
 	</div>
 </div>
 

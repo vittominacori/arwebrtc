@@ -78,7 +78,6 @@ ARWebRTC.controller('CanvasCtrl', ['$scope', '$interval', '$http',
         };
 
         $scope.takePicture = function(socialUrl) {
-            //window.open($scope.canvas.toDataURL());
 
             $http({
                 method: 'POST',
