@@ -86,7 +86,7 @@ ARWebRTC.controller('CanvasCtrl', ['$scope', '$interval', '$http',
                 headers: {'Content-Type': 'application/x-www-form-urlencoded'}
             })
             .success(function(res) {
-                window.open(socialUrl+window.location.protocol + "//" + window.location.host + window.location.pathname+"?img="+res.file);
+                document.location.href = window.location.protocol + "//" + window.location.host + window.location.pathname+"?img="+res.file;
             });
         };
 
@@ -95,13 +95,13 @@ ARWebRTC.controller('CanvasCtrl', ['$scope', '$interval', '$http',
                 $scope.takePicture('');
             },
             fb: function(){
-                $scope.takePicture('https://www.facebook.com/sharer/sharer.php?u=');
+                window.open('https://www.facebook.com/sharer/sharer.php?u=' + document.location.href);
             },
             tweet: function(){
-                $scope.takePicture('https://twitter.com/intent/tweet?text=Sample of using Augmented Reality with your browser&amp;url=');
+                window.open('https://twitter.com/intent/tweet?text=Sample of using Augmented Reality with your browser&amp;url=' + document.location.href);
             },
             gplus: function(){
-                $scope.takePicture('https://plus.google.com/share?url=');
+                window.open('https://plus.google.com/share?url=' + document.location.href);
             }
         };
 
