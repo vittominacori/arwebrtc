@@ -94,7 +94,7 @@ ARWebRTC.controller('CanvasCtrl', ['$scope', '$interval', '$http',
                 window.open('https://www.facebook.com/sharer/sharer.php?u=' + document.location.href);
             },
             tweet: function(){
-                window.open('https://twitter.com/intent/tweet?text=Sample of using Augmented Reality with your browser&amp;url=' + document.location.href);
+                window.open('https://twitter.com/intent/tweet?hashtags=AR,WebRTC,JavaScript&via=VittoMinacori&text=Try Augmented Reality in your browser&url=' + document.location.href);
             },
             gplus: function(){
                 window.open('https://plus.google.com/share?url=' + document.location.href);

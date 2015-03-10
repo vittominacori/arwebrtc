@@ -1,7 +1,7 @@
 <div ng-show="!recording">
 	<img src="<?=$photo?>">
 	<div class="buttons">
-		<button ng-click="init()"><i class="icono-image"></i> Take your own</button>
+		<button ng-click="init()"><i class="icono-play"></i> Take your own</button>
 		<button class="fb" ng-click="share.fb()"><i class="icono-facebook"></i> Share</button>
 		<button class="tw" ng-click="share.tweet()"><i class="icono-twitter"></i> Tweet</button>
 		<button class="gp" ng-click="share.gplus()"><i class="icono-gplus"></i> +1</button>
@@ -15,6 +15,6 @@
 
 
 	<div class="buttons">
-		<button ng-click="share.save()"><i class="icono-image"></i> Save image</button>
+		<button ng-click="share.save()"><i class="icono-image"></i> Take a picture</button>
 	</div>
 </div>
