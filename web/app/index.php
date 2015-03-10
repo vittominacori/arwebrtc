@@ -2,7 +2,7 @@
 if(file_exists("uploads/{$_GET['img']}.png")){
 	$photo = "uploads/{$_GET['img']}.png";
 } else {
-	$photo = "uploads/demo.png?" . time();
+	$photo = "uploads/demo.png";
 }
 ?>
 
