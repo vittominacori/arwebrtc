@@ -1,7 +1,5 @@
-
-
 <div ng-show="!recording">
-<img src="uploads/<?=!empty($_GET['img']) ? $_GET['img'].'.png' : 'demo.png' ?>">
+<img src="<?=$photo?>">
 	<div class="buttons">
 		<button ng-click="init()"><i class="icono-image"></i> Take yours</button>
 	</div>

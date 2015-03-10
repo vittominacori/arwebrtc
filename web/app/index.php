@@ -1,3 +1,11 @@
+<?php
+if(file_exists("uploads/{$_GET['img']}.png")){
+	$photo = "uploads/{$_GET['img']}.png";
+} else {
+	$photo = "uploads/demo.png";
+}
+?>
+
 <!doctype html>
 <html lang="en" ng-app="ARWebRTC">
 <head>
