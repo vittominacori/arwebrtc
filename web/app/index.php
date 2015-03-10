@@ -16,7 +16,6 @@ if(file_exists("uploads/{$_GET['img']}.png")){
 
 	<?php include "partials/canvas.php"; ?>
 
-	<script src="js/plugins.js"></script>
-	<script src="js/script.js"></script>
+	<script src="js/script.min.js"></script>
 </body>
 </html>

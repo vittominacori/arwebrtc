@@ -19,10 +19,17 @@ module.exports = function(grunt) {
                 dest: 'app/js/plugins.js'
             },
             // FRONTEND
-            angular: {
+            frontend: {
                 src: [
                     'app/js/app.js',
                     'app/js/controllers.js'
+                ],
+                dest: 'app/js/frontend.js'
+            },
+            app: {
+                src: [
+                    'app/js/plugins.js',
+                    'app/js/frontend.js'
                 ],
                 dest: 'app/js/script.js'
             }
@@ -49,7 +56,7 @@ module.exports = function(grunt) {
             },
             js: {
                 files: {
-                    'app/js/app.min.js': 'app/js/app.js'
+                    'app/js/script.min.js': 'app/js/script.js'
                 }
             }
         },
@@ -79,7 +86,7 @@ module.exports = function(grunt) {
             },
             js: {
                 files: ['app/js/app.js', 'app/js/controllers.js'],
-                tasks: ['jshint:all','concat:angular'],
+                tasks: ['jshint:all','concat:frontend','concat:app'],
                 options: {
                     livereload: true
                 }
@@ -98,7 +105,9 @@ module.exports = function(grunt) {
     // ---------------
     grunt.registerTask('default', [
         'jshint:all',
-        'concat:angular',
+        'concat:frontend',
+        'concat:app',
+        'uglify:js',
         'less:production'
     ]);
 
