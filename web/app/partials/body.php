@@ -18,3 +18,5 @@
 		<button ng-click="share.save()"><i class="icono-image"></i> Take a picture</button>
 	</div>
 </div>
+
+<div class="footer">nightly built by <a href="https://twitter.com/VittoMinacori" target="_blank">@VittoMinacori</a></footer>

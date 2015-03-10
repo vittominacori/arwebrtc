@@ -13,7 +13,7 @@ if(file_exists("uploads/{$_GET['img']}.png")){
 </head>
 <body ng-controller="CanvasCtrl">
 
-	<?php include "partials/canvas.php"; ?>
+	<?php include "partials/body.php"; ?>
 
     <link rel="stylesheet" type="text/css" href="css/style.css">
 	<script src="js/script.min.js"></script>
