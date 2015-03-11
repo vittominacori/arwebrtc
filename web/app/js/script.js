@@ -802,12 +802,16 @@ ARWebRTC.controller('CanvasCtrl', ['$scope', '$interval', '$http',
 
             $http({
                 method: 'POST',
-                url: 'upload.php',
+                url: 'upload',
                 data: 'img=' + $scope.canvas.toDataURL(),
                 headers: {'Content-Type': 'application/x-www-form-urlencoded'}
             })
             .success(function(res) {
-                document.location.href = window.location.protocol + "//" + window.location.host + window.location.pathname+"?img="+res.file;
+                    if(res.status == 1){
+                        document.location.href = '/'+res.file;
+                    } else {
+                        alert(res.message);
+                    }
             });
         };
 

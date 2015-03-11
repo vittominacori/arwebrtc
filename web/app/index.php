@@ -1,33 +1,55 @@
 <?php
-if(file_exists("uploads/{$_GET['img']}.png")){
-	$photo = "uploads/{$_GET['img']}.png";
-} else {
-	$photo = "uploads/demo.png";
+
+require('../../vendor/autoload.php');
+
+define('UPLOAD_DIR', 'uploads/');
+
+function getData($img = 'demo'){
+    $data = array();
+
+    $data['photo'] = UPLOAD_DIR."demo.png";
+    if(file_exists(UPLOAD_DIR."{$img}.png")){
+        $data['photo'] = UPLOAD_DIR."{$img}.png";
+    }
+
+    $data['ogImage'] = "https://{$_SERVER[HTTP_HOST]}".str_replace('index.php', '', $_SERVER[SCRIPT_NAME]).$data['photo']."?".time();
+    $data['currentUrl'] = "https://{$_SERVER[HTTP_HOST]}{$_SERVER[REQUEST_URI]}";
+
+    return $data;
 }
+
+$app = new Silex\Application();
+
+// Register the Twig templating engine
+$app->register(new Silex\Provider\TwigServiceProvider(), array(
+    'twig.path' => __DIR__.'/views',
+));
+
+$app->get('/', function () use ($app) {
+    return $app['twig']->render('index.twig', getData());;
+});
+
+$app->get('/{img}', function ($img) use ($app) {
+    return $app['twig']->render('index.twig', getData($img));
+});
+
+$app->post('/upload', function () {
+
+    $img = $_POST['img'];
+    $img = str_replace('data:image/png;base64,', '', $img);
+    $img = str_replace(' ', '+', $img);
+    $data = base64_decode($img);
+    $uniqId = uniqid();
+    $file = UPLOAD_DIR . $uniqId . '.png';
+    $success = file_put_contents($file, $data);
+
+    if($success){
+        return json_encode(array('status'=>1,'file'=>$uniqId));
+    } else {
+        return json_encode(array('status'=>0,'message'=>'Unable to save the file.'));
+    }
+});
+
+
+$app->run();
 ?>
-
-<!doctype html>
-<html lang="en" ng-app="ARWebRTC">
-<head>
-	<?php include "partials/metadata.php"; ?>
-</head>
-<body ng-controller="CanvasCtrl">
-
-	<?php include "partials/body.php"; ?>
-
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-	<script src="js/script.min.js"></script>
-
-	<script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-      ga('create', 'UA-60592097-1', 'auto');
-      ga('require', 'displayfeatures');
-      ga('send', 'pageview');
-
-    </script>
-</body>
-</html>

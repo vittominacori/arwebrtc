@@ -8,11 +8,11 @@ ARWebRTC.controller('CanvasCtrl', ['$scope', '$interval', '$http',
             $scope.ctx = $scope.canvas.getContext("2d");
 
             navigator.getUserMedia = (
-                navigator.getUserMedia ||
-                navigator.webkitGetUserMedia ||
-                navigator.mozGetUserMedia ||
-                navigator.msGetUserMedia
-                );
+            navigator.getUserMedia ||
+            navigator.webkitGetUserMedia ||
+            navigator.mozGetUserMedia ||
+            navigator.msGetUserMedia
+            );
 
             if (navigator.getUserMedia) {
                 navigator.getUserMedia({
@@ -46,9 +46,9 @@ ARWebRTC.controller('CanvasCtrl', ['$scope', '$interval', '$http',
 
         $scope.drawToCanvas = function(effect) {
             var video = $scope.video,
-            ctx = $scope.ctx,
-            canvas = $scope.canvas,
-            i;
+                ctx = $scope.ctx,
+                canvas = $scope.canvas,
+                i;
 
             ctx.drawImage(video, 0, 0, 515,426);
 
@@ -77,13 +77,17 @@ ARWebRTC.controller('CanvasCtrl', ['$scope', '$interval', '$http',
 
             $http({
                 method: 'POST',
-                url: 'upload.php',
+                url: 'upload',
                 data: 'img=' + $scope.canvas.toDataURL(),
                 headers: {'Content-Type': 'application/x-www-form-urlencoded'}
             })
-            .success(function(res) {
-                document.location.href = window.location.protocol + "//" + window.location.host + window.location.pathname+"?img="+res.file;
-            });
+                .success(function(res) {
+                    if(res.status == 1){
+                        document.location.href = '/'+res.file;
+                    } else {
+                        alert(res.message);
+                    }
+                });
         };
 
         $scope.share = {
