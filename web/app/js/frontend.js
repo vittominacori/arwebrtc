@@ -12,11 +12,11 @@ ARWebRTC.controller('CanvasCtrl', ['$scope', '$interval', '$http',
             $scope.ctx = $scope.canvas.getContext("2d");
 
             navigator.getUserMedia = (
-                navigator.getUserMedia ||
-                navigator.webkitGetUserMedia ||
-                navigator.mozGetUserMedia ||
-                navigator.msGetUserMedia
-                );
+            navigator.getUserMedia ||
+            navigator.webkitGetUserMedia ||
+            navigator.mozGetUserMedia ||
+            navigator.msGetUserMedia
+            );
 
             if (navigator.getUserMedia) {
                 navigator.getUserMedia({
@@ -50,9 +50,9 @@ ARWebRTC.controller('CanvasCtrl', ['$scope', '$interval', '$http',
 
         $scope.drawToCanvas = function(effect) {
             var video = $scope.video,
-            ctx = $scope.ctx,
-            canvas = $scope.canvas,
-            i;
+                ctx = $scope.ctx,
+                canvas = $scope.canvas,
+                i;
 
             ctx.drawImage(video, 0, 0, 515,426);
 
@@ -85,13 +85,13 @@ ARWebRTC.controller('CanvasCtrl', ['$scope', '$interval', '$http',
                 data: 'img=' + $scope.canvas.toDataURL(),
                 headers: {'Content-Type': 'application/x-www-form-urlencoded'}
             })
-            .success(function(res) {
+                .success(function(res) {
                     if(res.status == 1){
                         document.location.href = '/'+res.file;
                     } else {
                         alert(res.message);
                     }
-            });
+                });
         };
 
         $scope.share = {
@@ -102,13 +102,13 @@ ARWebRTC.controller('CanvasCtrl', ['$scope', '$interval', '$http',
                 window.open('https://www.facebook.com/sharer/sharer.php?u=' + document.location.href);
             },
             tweet: function(){
-                window.open('https://twitter.com/intent/tweet?hashtags=AR,WebRTC,JavaScript&via=VittoMinacori&text=Try Augmented Reality in your browser&url=' + document.location.href);
+                window.open('https://twitter.com/intent/tweet?hashtags='+Window.hashtags+'&via='+Window.via+'&text='+Window.title+'&url=' + document.location.href);
             },
             gplus: function(){
                 window.open('https://plus.google.com/share?url=' + document.location.href);
             },
             in: function(){
-                window.open('https://www.linkedin.com/shareArticle?mini=true&title=Try Augmented Reality in your browser&summary=Take and share your own photo using Augmented Reality in your browser with WebRTC and JavaScript.&url=' + document.location.href);
+                window.open('https://www.linkedin.com/shareArticle?mini=true&title='+Window.title+'&summary='+Window.description+'&url=' + document.location.href);
             }
         };
 

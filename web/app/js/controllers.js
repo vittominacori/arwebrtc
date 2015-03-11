@@ -98,13 +98,13 @@ ARWebRTC.controller('CanvasCtrl', ['$scope', '$interval', '$http',
                 window.open('https://www.facebook.com/sharer/sharer.php?u=' + document.location.href);
             },
             tweet: function(){
-                window.open('https://twitter.com/intent/tweet?hashtags=AR,WebRTC,JavaScript&via=VittoMinacori&text=Try Augmented Reality in your browser&url=' + document.location.href);
+                window.open('https://twitter.com/intent/tweet?hashtags='+Window.hashtags+'&via='+Window.via+'&text='+Window.title+'&url=' + document.location.href);
             },
             gplus: function(){
                 window.open('https://plus.google.com/share?url=' + document.location.href);
             },
             in: function(){
-                window.open('https://www.linkedin.com/shareArticle?mini=true&title=Try Augmented Reality in your browser&summary=Take and share your own photo using Augmented Reality in your browser with WebRTC and JavaScript.&url=' + document.location.href);
+                window.open('https://www.linkedin.com/shareArticle?mini=true&title='+Window.title+'&summary='+Window.description+'&url=' + document.location.href);
             }
         };
 

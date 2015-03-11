@@ -7,6 +7,11 @@ define('UPLOAD_DIR', 'uploads/');
 function getData($img = 'demo'){
     $data = array();
 
+    $data['title'] = "Try Augmented Reality in your browser";
+    $data['description'] = "Take and share your own photo using Augmented Reality in your browser with WebRTC and JavaScript.";
+    $data['hashtags'] = "AR,WebRTC,JavaScript";
+    $data['via'] = "VittoMinacori";
+
     $data['photo'] = UPLOAD_DIR."demo.png";
     if(file_exists(UPLOAD_DIR."{$img}.png")){
         $data['photo'] = UPLOAD_DIR."{$img}.png";

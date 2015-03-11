@@ -1,8 +1,15 @@
-<meta name="description" content="Take and share your own photo using Augmented Reality in your browser with WebRTC and JavaScript.">
+<meta name="description" content="{{ description }}">
 
 <meta property="og:image" content="{{ ogImage }}" />
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Try Augmented Reality in your browser" />
+<meta property="og:title" content="{{ title }}" />
 <meta property="og:url" content="{{ currentUrl }}" />
 
-<title>Try Augmented Reality in your browser</title>
+<title>{{ title }}</title>
+
+<script>
+    Window.title = "{{ title }}";
+    Window.description = "{{ description }}";
+    Window.hashtags = "{{ hashtags }}";
+    Window.via = "{{ via }}";
+</script>
