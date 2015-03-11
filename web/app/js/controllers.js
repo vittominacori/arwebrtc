@@ -20,7 +20,7 @@ ARWebRTC.controller('CanvasCtrl', ['$scope', '$interval', '$http',
                     audio: false
                 }, $scope.successCallback, $scope.errorCallback);
             } else {
-                alert('getUserMedia is not supported in this browser.');
+                alert(':( Sorry your browser does not support getUserMedia(). Try opening this page on Chrome or Firefox!');
             }
 
         };
@@ -40,7 +40,7 @@ ARWebRTC.controller('CanvasCtrl', ['$scope', '$interval', '$http',
         };
 
         $scope.errorCallback = function(error) {
-            alert('An error occurred while trying to get camera access (Your browser probably doesnt support getUserMedia() ): ' + error.code);
+            alert('An error occurred while trying to get camera access (Your browser probably does not support getUserMedia() ): ' + error.code);
             return;
         };
 
