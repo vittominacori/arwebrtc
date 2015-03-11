@@ -20,7 +20,7 @@ ARWebRTC.controller('CanvasCtrl', ['$scope', '$interval', '$http',
                     audio: false
                 }, $scope.successCallback, $scope.errorCallback);
             } else {
-                alert(':( Sorry your browser does not support getUserMedia(). Try opening this page on Chrome or Firefox!');
+                alert(':( Sorry your browser does not support getUserMedia(). Try opening this page with Chrome or Firefox!');
             }
 
         };
