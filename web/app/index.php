@@ -17,7 +17,7 @@ function getData($img = 'demo'){
         $data['photo'] = UPLOAD_DIR."{$img}.png";
     }
 
-    $data['ogImage'] = "https://{$_SERVER[HTTP_HOST]}".str_replace('index.php', '', $_SERVER[SCRIPT_NAME]).$data['photo']."?".time();
+    $data['ogImage'] = "https://{$_SERVER[HTTP_HOST]}".str_replace('index.php', '', $_SERVER[SCRIPT_NAME]).$data['photo'];
     $data['currentUrl'] = "https://{$_SERVER[HTTP_HOST]}{$_SERVER[REQUEST_URI]}";
 
     return $data;
