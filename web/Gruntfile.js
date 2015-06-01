@@ -14,7 +14,8 @@ module.exports = function(grunt) {
                 src: [
                     'bower_components/angular/angular.min.js',
                     'app/js/vendor/ccv.js',
-                    'app/js/vendor/face.js'
+                    'app/js/vendor/face.js',
+                    'app/js/vendor/cookiechoices.js'
                 ],
                 dest: 'app/js/plugins.js'
             },
