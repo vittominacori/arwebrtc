@@ -744,6 +744,7 @@ var cascade = {"count" : 16, "width" : 24, "height" : 24, "stage_classifier" : [
     var document = window.document;
     // IE8 does not support textContent, so we should fallback to innerText.
     //var supportsTextContent = 'textContent' in document.body;
+    var supportsTextContent = document.body.textContent;
 
     var cookieChoices = (function() {
 
@@ -805,12 +806,11 @@ var cascade = {"count" : 16, "width" : 24, "height" : 24, "stage_classifier" : [
         }
 
         function _setElementText(element, text) {
-            //if (supportsTextContent) {
-            //    element.textContent = text;
-            //} else {
-            //    element.innerText = text;
-            //}
-            element.innerText = text;
+            if (supportsTextContent) {
+                element.textContent = text;
+            } else {
+                element.innerText = text;
+            }
         }
 
         function _createConsentText(cookieText) {
